@@ -35,6 +35,11 @@ class StardewExporter(object):
     yield CurrentMoney
 
 
+    Farmer = Bs_data.find("farmer").children
+    for item in Farmer:
+        print(item)
+        print("\n")
+  
 
 
 
