@@ -13,15 +13,20 @@ class StardewExporter(object):
 # Fetch XML data 
     with open(SaveFile, 'r') as f:
         data = f.read()
-    Bs_data = BeautifulSoup(data, "html")
+        
+    Bs_data = BeautifulSoup(data,features="html.parser")
     
-    #print(Bs_data)
+
+    #Exporter for Deepest Mine Level
+
     Mine = Bs_data.find("deepestminelevel")
-    print(Mine)
 
     DeepestMineLevel = Metric(name="sv_deepestminelevel", documentation="Displays the deepest level of the mine", typ="gauge")    
     DeepestMineLevel.add_sample("sv_deepestminelevel", labels={}, value=Mine.contents[0])
     yield DeepestMineLevel
+
+
+    #Exporter for Current Money
 
     Money = Bs_data.find("money")
 
