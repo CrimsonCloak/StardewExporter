@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 class StardewExporter(object):
   def collect(self):
-    #nog aan te passen!!!!
     SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
 
 
@@ -34,11 +33,11 @@ class StardewExporter(object):
     CurrentMoney.add_sample("sv_money", labels={}, value=Money.contents[0])
     yield CurrentMoney
 
-
-    Farmer = Bs_data.find("farmer").children
-    for item in Farmer:
-        print(item)
-        print("\n")
+    # List all children to explore data
+    # Farmer = Bs_data.find("farmer").children
+    # for item in Farmer:
+    #     print(item)
+    #     print("\n")
   
 
 
