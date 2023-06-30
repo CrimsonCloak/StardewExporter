@@ -1,11 +1,122 @@
 Dashboards:
 
-Farm stats and progression
+Random:
+	-forceonetilewide : bool
+	-gameversion: 1.5.6 (string)
+	- gameversionlabel (string-
+
+Farm stats and progression:
+	- furnitureowned
+	- farmname
+	- whichpetbreed
+	- catperson
+	- cavechoice:int
+	- houseupgradelevel
+	-coopupgradelevel
+	-barnupgradelevel
+	-hasgreenhouse
+	-daysofmonthforsavegame
+	-seasonforsavegame: int
+	-yearsforsavegame	
+	-deepestminelevel:
+
+Currencies:
+	-clubcoins
+	-qigems
+	-money
 
 Player stats and progression
+	- isemoting : bool
+	- ischarging: bool (tool visual)
+	- isglowing: bool
+	- position: x + int, y + int
+	- speed: int
+	- professions: ?
+	- experience points: int values (list)
+	- achievements
+	- specialitems
+	- timewenttobed
+	- blueprints
+	- favoritething
+	- userID
+	- lastseenmovieweek
+	- trashcanlevel
+	- hasunlockedskulldoor
+	-hasdarktalisman
+	-hasmagicink
+	-hasmagnifyingglass
+	-haswateringcanenchantment
+	-ismale
+	-hasbusticket
+	-stardewhero
+	-hasclubcard
+	-hasspecialcharm
+	-hastownley
+	-basicshipped
+	-mineralsfound
+	-recipescooked
+	-fish caught
+	-archeologyfound
+	-callsreceived
+	-gifteditems
+	-tailoreditems
+	-homelocation: FarmHouse
+	-daysmarried
+	-movementmultiplier= 0.066
+	-timesreachedminebottom
+	-uniquemultiplayerid:
+Player statistics 2:
+	- stats followed by a huge ass list - > inspect!
 
+
+Player skill levels:
+	- farminglevel: int
+	- mininglevel: int
+	- combatlevel
+	- foraginglevel
+	- fishinglevel
+	- lucklevel
+	- addedmininglevel: + all the rest
+	- maxstamina
+	- maxitems
+	- resilience
+	- attack
+	- immunity
+	- health
+	-maxhealth
+Modifiers:
+	- attachincreasemodifier
+	- knockbackmodifier
+	- weaponspeedmodifier
+	- critchancemodifiier
+	- critpowermodifier
+	- weaponprecisionmodifier
 Settings
 
+	-showchestcolorpicker
+	-magneticradius: int
+	-difficultymodifier
 Cosmetics
+	-shirt: int
+	- hair: int
+	- skin: int
+	- shoes: int
+	- accessory: int
+	- facialhair: int
+	- pants: int
+	- hairstylecolor: rgb int values + a packedvalue
+	- pantscolor: rgb ints + packedvalue
+	- neweyecolor: rbg ints + packedvalue
+
+
+Inventory:
+woodpieces: int
+stone
+copper
+iron
+coal
+gold
+iridium
+quartz
 
 

@@ -13,7 +13,7 @@ class StardewExporter(object):
     with open(SaveFile, 'r') as f:
         data = f.read()
         
-    Bs_data = BeautifulSoup(data,features="html.parser")
+    Bs_data = BeautifulSoup(data,features="lxml")
     
 
     #Exporter for Deepest Mine Level
