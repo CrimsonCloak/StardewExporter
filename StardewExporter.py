@@ -15,8 +15,63 @@ class StardewExporter(object):
         
     Bs_data = BeautifulSoup(data,features="lxml")
     
+    #Metrics for Currencies 
 
-    #Exporter for Deepest Mine Level
+    #Metric for Current Money
+
+    Money = Bs_data.find("money")
+
+    CurrentMoney = Metric(name="sv_money", documentation="Displays current amount of money", typ="gauge")    
+    CurrentMoney.add_sample("sv_money", labels={}, value=Money.contents[0])
+    yield CurrentMoney
+
+    #Metric for Qigems
+
+    Qigems = Bs_data.find("qigems")
+
+    CurrentQigems = Metric(name="sv_qigems", documentation="Displays current amount of qigems", typ="gauge")    
+    CurrentQigems.add_sample("sv_qigems", labels={}, value=Qigems.contents[0])
+    yield CurrentQigems
+
+
+    #Metrics for Player Statistics
+    #Metrics for Farming level
+    FarmLevel= Bs_data.find("farminglevel")
+    FarmingLevel = Metric(name="sv_farminglevel", documentation="Displays current farming level", typ="gauge")    
+    FarmingLevel.add_sample("sv_farminglevel", labels={}, value=FarmLevel.contents[0])
+    yield FarmingLevel
+
+    #Metrics for Mining level
+    MineLevel= Bs_data.find("mininglevel")
+    MiningLevel = Metric(name="sv_mininglevel", documentation="Displays current mining level", typ="gauge")    
+    MiningLevel.add_sample("sv_mininglevel", labels={}, value=MineLevel.contents[0])
+    yield MiningLevel
+
+
+    #Metrics for Combat level
+    FightLevel= Bs_data.find("combatlevel")
+    CombatLevel = Metric(name="sv_combatlevel", documentation="Displays current combat level", typ="gauge")    
+    CombatLevel.add_sample("sv_combatlevel", labels={}, value=FightLevel.contents[0])
+    yield CombatLevel
+
+    #Metrics for Foraging level
+    Foraging= Bs_data.find("foraginglevel")
+    ForagingLevel = Metric(name="sv_foraginglevel", documentation="Displays current foraging level", typ="gauge")    
+    ForagingLevel.add_sample("sv_foraging", labels={}, value=Foraging.contents[0])
+    yield ForagingLevel
+
+     #Metrics for Fishing level
+    Fishing= Bs_data.find("fishinglevel")
+    FishingLevel = Metric(name="sv_fishinglevel", documentation="Displays current fishing level", typ="gauge")    
+    FishingLevel.add_sample("sv_combatlevel", labels={}, value=Fishing.contents[0])
+    yield FishingLevel
+
+     #Metrics for Luck level
+    Luck= Bs_data.find("lucklevel")
+    LuckLevel = Metric(name="sv_lucklevel", documentation="Displays current luck level", typ="gauge")    
+    LuckLevel.add_sample("sv_lucklevel", labels={}, value=Luck.contents[0])
+    yield LuckLevel
+    #Metric for Deepest Mine Level
 
     Mine = Bs_data.find("deepestminelevel")
 
@@ -25,13 +80,6 @@ class StardewExporter(object):
     yield DeepestMineLevel
 
 
-    #Exporter for Current Money
-
-    Money = Bs_data.find("money")
-
-    CurrentMoney = Metric(name="sv_money", documentation="Displays current amount of money", typ="gauge")    
-    CurrentMoney.add_sample("sv_money", labels={}, value=Money.contents[0])
-    yield CurrentMoney
 
     # List all children to explore data
     # Farmer = Bs_data.find("farmer").children
