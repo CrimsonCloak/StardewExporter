@@ -1,0 +1,169 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "neutral": 0
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "10.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_mininglevel",
+          "format": "time_series",
+          "instant": false,
+          "legendFormat": "Mining",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+          },
+          "editorMode": "builder",
+          "expr": "sv_foraging",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Foraging",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+          },
+          "editorMode": "builder",
+          "expr": "sv_fishinglevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Fishing",
+          "range": true,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+          },
+          "editorMode": "builder",
+          "expr": "sv_combatlevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Combat",
+          "range": true,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "b73351fd-3fa3-4d63-a25e-0273b2b0873f"
+          },
+          "editorMode": "builder",
+          "expr": "sv_farminglevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Farming",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Player skills",
+      "type": "gauge"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2023-06-28T12:04:49.631Z",
+    "to": "2023-07-02T12:04:49.631Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Stardew",
+  "uid": "c2255037-042f-4f40-979d-30e67c46c8ec",
+  "version": 13,
+  "weekStart": ""
+}
