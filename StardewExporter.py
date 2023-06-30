@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 
 class StardewExporter(object):
   def collect(self):
-    SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
-
+    #SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
+    SaveFile = ".\\Savefiles_Samples\\Alexje_190073547\\SaveGameInfo"
 
 # Fetch XML data 
     with open(SaveFile, 'r') as f:
