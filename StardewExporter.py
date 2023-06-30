@@ -62,7 +62,7 @@ class StardewExporter(object):
      #Metrics for Fishing level
     Fishing= Bs_data.find("fishinglevel")
     FishingLevel = Metric(name="sv_fishinglevel", documentation="Displays current fishing level", typ="gauge")    
-    FishingLevel.add_sample("sv_combatlevel", labels={}, value=Fishing.contents[0])
+    FishingLevel.add_sample("sv_fishinglevel", labels={}, value=Fishing.contents[0])
     yield FishingLevel
 
      #Metrics for Luck level
