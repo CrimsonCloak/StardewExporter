@@ -1,10 +1,19 @@
-FROM python:3
+FROM ubuntu
 
-WORKDIR /usr/src/app
-
+## Perform setup
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt update
 
+## Install python and pip
+RUN apt install python3 pip -y
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip freeze -l
 COPY . .
-EXPOSE 80
-CMD [ "python", "./StardewExporter.py" ]
+RUN ls
+
+
+## Expose port on which exporter runs
+EXPOSE 9321
+
+
+CMD [ "python3", "StardewExporter.py" ]
