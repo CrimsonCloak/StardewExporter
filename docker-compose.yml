@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  prometheus:
+    image: prom/prometheus:v2.36.2
+    # volumes:
+    #  - ./prometheus/:/etc/prometheus/
+    #  - prometheus_data:/prometheus
+    ports:
+      - 9090:9090
+    restart: always
+
+  stardewexporter:
+    image: aleksandur24/stardewexporter:1.0
+
+    ports:
+      - 9321:9321
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+
+    ports:
+      - 3000:3000
+    #volumes:
+    #  - grafana_data:/var/lib/grafana
+    #  - ./grafana/provisioning/:/etc/grafana/provisioning/
+    restart: always
+
