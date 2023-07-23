@@ -145,7 +145,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 18,
         "w": 17,
         "x": 3,
         "y": 0
@@ -233,9 +233,153 @@
       "title": "Player skill level",
       "transformations": [],
       "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 25,
+          "valueSize": 50
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_barssmelted",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Bars smelted"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_beveragesmade",
+          "format": "time_series",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Beverages made"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_boulderscracked",
+          "format": "time_series",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Boulders cracked"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_cheesemade",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Cheese made"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_fishcaught",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Fish caught"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_giftsgiven",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{Name}}",
+          "range": false,
+          "refId": "Gifts given"
+        }
+      ],
+      "title": "Miscellaneous Stats",
+      "type": "stat"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],
@@ -243,13 +387,13 @@
     "list": []
   },
   "time": {
-    "from": "2023-07-23T03:30:24.854Z",
-    "to": "2023-07-23T15:30:24.854Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Stardew",
   "uid": "cf74b59e-1b40-470c-8be5-72f2a136b152",
-  "version": 17,
+  "version": 20,
   "weekStart": ""
 }
