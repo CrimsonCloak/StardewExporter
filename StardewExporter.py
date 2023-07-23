@@ -11,7 +11,7 @@ class StardewExporter(object):
     #SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
     else: #No path given -> Basic example savegame
       File_Path = os.path.join(os.path.dirname(__file__), "savefile/SaveGameInfo")
-    print(File_Path)
+    #print(File_Path)
 # Fetch XML data 
     with open(File_Path, 'r') as f:
         data = f.read()
@@ -77,7 +77,7 @@ class StardewExporter(object):
     #Metric for Deepest Mine Level
 
     Mine = Bs_data.find("deepestminelevel")
-
+    print(Mine)
     DeepestMineLevel = Metric(name="sv_deepestminelevel", documentation="Displays the deepest level of the mine", typ="gauge")    
     DeepestMineLevel.add_sample("sv_deepestminelevel", labels={}, value=Mine.contents[0])
     yield DeepestMineLevel
@@ -85,10 +85,19 @@ class StardewExporter(object):
 
 
     # List all children to explore data
-    # Farmer = Bs_data.find("farmer").children
-    # for item in Farmer:
-    #     print(item)
-    #     print("\n")
+    Stats = Bs_data.find("stats").children
+    for item in Stats:
+      print(item)
+      print(item.name)
+      print("\n")
+      if(item.text):
+        StatName = Metric(name=("sv_" + item.name),documentation="" ,typ="gauge")
+        StatName.add_sample(("sv_" + item.name), labels={}, value=item.contents[0])
+        yield StatName
+    # Mine = Bs_data.find("deepestminelevel")
+    # DeepestMineLevel = Metric(name="sv_deepestminelevel", documentation="Displays the deepest level of the mine", typ="gauge")    
+    # DeepestMineLevel.add_sample("sv_deepestminelevel", labels={}, value=Mine.contents[0])
+    # yield DeepestMineLevel
   
 
 
