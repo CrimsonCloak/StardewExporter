@@ -1,13 +1,17 @@
 from prometheus_client import start_http_server, Metric, REGISTRY
-import time, os
+import time, os, sys
 from bs4 import BeautifulSoup
 
 # Version 1.0
 
 class StardewExporter(object):
   def collect(self):
+    if(len(sys.argv) >1): #Check if an argument was given -> if so set path to that argument
+      File_Path = sys.argv[1]
     #SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
-    File_Path = os.path.join(os.path.dirname(__file__), "Savefiles_Samples/Prom_347722748/SaveGameInfo")
+    else: #No path given -> Basic example savegame
+      File_Path = os.path.join(os.path.dirname(__file__), "Savefiles_Samples/Prom_347722748/SaveGameInfo")
+    print(File_Path)
 # Fetch XML data 
     with open(File_Path, 'r') as f:
         data = f.read()
