@@ -10,7 +10,7 @@ class StardewExporter(object):
       File_Path = sys.argv[1]
     #SaveFile = 'C:\\Users\\alexa\\AppData\\Roaming\\StardewValley\\Saves\\Prom_347722748\\SaveGameInfo'
     else: #No path given -> Basic example savegame
-      File_Path = os.path.join(os.path.dirname(__file__), "Savefiles_Samples/Prom_347722748/SaveGameInfo")
+      File_Path = os.path.join(os.path.dirname(__file__), "savefile/SaveGameInfo")
     print(File_Path)
 # Fetch XML data 
     with open(File_Path, 'r') as f:

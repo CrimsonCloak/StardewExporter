@@ -9,7 +9,6 @@ services:
     image: prom/prometheus:v2.36.2
     volumes:
       - ./prometheus/:/etc/prometheus/
-      #- ./prometheus_data:/prometheus
     ports:
       - 9090:9090
     networks:
@@ -19,8 +18,9 @@ services:
 
 
   stardewexporter:
-    image: aleksandur24/stardewexporter:1.0
-
+    image: aleksandur24/stardewexporter:1.1
+    volumes:
+      - ./savefile:/savefile # Fix mounting and SaveFile selection
     ports:
       - 9321:9321
     networks:

@@ -27,6 +27,92 @@
         "type": "prometheus",
         "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
       },
+      "description": "List of currencies in the game",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 30,
+          "valueSize": 30
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "sv_money",
+          "format": "time_series",
+          "instant": false,
+          "legendFormat": "Money",
+          "range": true,
+          "refId": "Money"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_qigems",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Qi gems",
+          "range": true,
+          "refId": "Qi gems"
+        }
+      ],
+      "title": "Currency",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+      },
       "description": "Shows player skills from specific save file",
       "fieldConfig": {
         "defaults": {
@@ -59,9 +145,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 12,
-        "w": 9,
-        "x": 7,
+        "h": 7,
+        "w": 17,
+        "x": 3,
         "y": 0
       },
       "id": 1,
@@ -149,7 +235,7 @@
       "type": "gauge"
     }
   ],
-  "refresh": "",
+  "refresh": false,
   "schemaVersion": 38,
   "style": "dark",
   "tags": [],
@@ -157,13 +243,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2023-07-23T03:30:24.854Z",
+    "to": "2023-07-23T15:30:24.854Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Stardew",
   "uid": "cf74b59e-1b40-470c-8be5-72f2a136b152",
-  "version": 10,
+  "version": 17,
   "weekStart": ""
 }
