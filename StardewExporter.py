@@ -84,12 +84,14 @@ class StardewExporter(object):
 
 
 
+
+    #Metrics for miscellaneous statistics of player
     # List all children to explore data
     Stats = Bs_data.find("stats").children
     for item in Stats:
-      print(item)
-      print(item.name)
-      print("\n")
+      # print(item)
+      # print(item.name)
+      # print("\n")
       if(item.text):
         StatName = Metric(name=("sv_" + item.name),documentation="" ,typ="gauge")
         StatName.add_sample(("sv_" + item.name), labels={}, value=item.contents[0])
