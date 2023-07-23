@@ -94,7 +94,7 @@ class StardewExporter(object):
       # print("\n")
       if(item.text):
         StatName = Metric(name=("sv_" + item.name),documentation="" ,typ="gauge")
-        StatName.add_sample(("sv_" + item.name), labels={}, value=item.contents[0])
+        StatName.add_sample(("sv_" + item.name), labels={["Name", item.name],["Category", "Misc_Statistics"]}, value=item.contents[0])
         yield StatName
     # Mine = Bs_data.find("deepestminelevel")
     # DeepestMineLevel = Metric(name="sv_deepestminelevel", documentation="Displays the deepest level of the mine", typ="gauge")    
