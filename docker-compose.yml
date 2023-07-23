@@ -9,7 +9,7 @@ services:
     image: prom/prometheus:v2.36.2
     volumes:
       - ./prometheus/:/etc/prometheus/
-      - ./prometheus_data:/prometheus
+      #- ./prometheus_data:/prometheus
     ports:
       - 9090:9090
     networks:
