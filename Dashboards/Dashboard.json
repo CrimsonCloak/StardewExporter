@@ -1,0 +1,169 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+      },
+      "description": "Shows player skills from specific save file",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 10,
+          "min": 0,
+          "noValue": "No data",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": null
+              },
+              {
+                "color": "semi-dark-yellow",
+                "value": 5
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 9,
+        "x": 7,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false
+      },
+      "pluginVersion": "10.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_combatlevel",
+          "instant": false,
+          "legendFormat": "Combat level",
+          "range": true,
+          "refId": "Combat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_fishinglevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Fishing level",
+          "range": true,
+          "refId": "Fishing"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_foraging",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Foraging level",
+          "range": true,
+          "refId": "Foraging"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_farminglevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Farming level",
+          "range": true,
+          "refId": "Farming"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
+          },
+          "editorMode": "builder",
+          "expr": "sv_mininglevel",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Mining level",
+          "range": true,
+          "refId": "Mining"
+        }
+      ],
+      "title": "Player skill level",
+      "transformations": [],
+      "type": "gauge"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Stardew",
+  "uid": "cf74b59e-1b40-470c-8be5-72f2a136b152",
+  "version": 10,
+  "weekStart": ""
+}
