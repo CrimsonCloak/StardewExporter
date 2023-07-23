@@ -1,28 +1,51 @@
 version: '3.7'
+
+
+
+
 services:
+
   prometheus:
     image: prom/prometheus:v2.36.2
-    # volumes:
-    #  - ./prometheus/:/etc/prometheus/
-    #  - prometheus_data:/prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - ./prometheus_data:/prometheus
     ports:
       - 9090:9090
+    networks:
+      stardew:
+        ipv4_address: 10.0.0.2
     restart: always
+
 
   stardewexporter:
     image: aleksandur24/stardewexporter:1.0
 
     ports:
       - 9321:9321
+    networks:
+      stardew:
+        ipv4_address: 10.0.0.3
     restart: always
+
 
   grafana:
     image: grafana/grafana
-
     ports:
       - 3000:3000
-    #volumes:
-    #  - grafana_data:/var/lib/grafana
-    #  - ./grafana/provisioning/:/etc/grafana/provisioning/
+    user: "0"
+    volumes:
+      - ./grafana/grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     restart: always
+    networks:
+      stardew:
+        ipv4_address: 10.0.0.4
 
+networks:
+  stardew:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.0.0.0/16
+         gateway: 10.0.0.1
