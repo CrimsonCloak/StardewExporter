@@ -18,9 +18,9 @@ services:
 
 
   stardewexporter:
-    image: aleksandur24/stardewexporter:1.1
+    image: aleksandur24/stardewexporter:1.2
     volumes:
-      - ./savefile:/savefile # Fix mounting and SaveFile selection
+      - ./savefile:/savefile 
     ports:
       - 9321:9321
     networks:
