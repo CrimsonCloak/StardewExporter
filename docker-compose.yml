@@ -1,8 +1,4 @@
 version: '3.7'
-
-
-
-
 services:
 
   prometheus:
@@ -18,7 +14,7 @@ services:
 
 
   stardewexporter:
-    image: aleksandur24/stardewexporter:1.2
+    image: aleksandur24/stardewexporter:1.1
     volumes:
       - ./savefile:/savefile 
     ports:

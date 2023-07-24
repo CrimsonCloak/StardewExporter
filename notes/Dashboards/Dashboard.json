@@ -239,6 +239,7 @@
         "type": "prometheus",
         "uid": "c65baa23-a5fa-4b54-8c3f-8df7cd88ee10"
       },
+      "description": "A collection of miscellaneous statistics for the player.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -251,10 +252,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -394,6 +391,6 @@
   "timezone": "",
   "title": "Stardew",
   "uid": "cf74b59e-1b40-470c-8be5-72f2a136b152",
-  "version": 20,
+  "version": 22,
   "weekStart": ""
 }
