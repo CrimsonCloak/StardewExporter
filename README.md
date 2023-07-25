@@ -47,10 +47,15 @@ In order to scrape the metrics from our Stardew-exporter, we will need a Prometh
 ![Image of Prometheus instance](/img/Prometheus.png "Prometheus instance with targets to be scraped and status of said targets")
 
 ## Grafana instance
-Lastly, we want to visualise the metrics scraped from our Stardew-exporter. For this, we will use a Grafana instance, once again using a Docker image.
-
-
+Lastly, we want to visualise the metrics scraped from our Stardew-exporter. For this, we will use a Grafana instance, once again using a Docker image. Because of the volume binding in the docker-compose file and the existing grafana-files, relevant configurations such as the dashboard-JSON as well as the home dashboard are carried over. It is enough to simply clone the repository and run the compose file.
 
 # Limitations
-
+## Static and limited data
 The exporter is only applied on a static save file, so there is no real-time data updates as you play the game. If you want to analyse your own save file, you need to replace the "SaveGameInfo" file with the one found in your own Stardew Valley files. In the future this could be implemented better. 
+
+
+## Unencrypted and excess HTTP
+Another aspect is security. While this is only for testing purposes, all traffic and served metrics occur over HTTP, not HTTPS. Furthermore, the ports for the Prometheus exporter and Stardew-exporter (respectively 9090 and 9321) are currently exposed outside of the Docker containers. This step is unnecessary, as the internal Docker network already provides access for the Grafana-instance. It would be sufficient to expose the Grafana-instance (port 3000) and forego the exposure of ports 9090 and 9321. In this use case and for testing/demonstration purposes, however, it does have its uses.
+
+## Massive size of docker image
+This was the first time I built a Docker-image that is hosted on Docker Hub. Because of this inexperience, the way the Dockerfile works is most likely highly inefficient and most certainly *not* following best practices. The resulting docker image can therefore most likely be reduced in size by addressing these problems and optimizing this build. 
