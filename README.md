@@ -1,5 +1,5 @@
 # Stardew exporter
-![Docker Pulls](https://img.shields.io/docker/pulls/aleksandur24/stardewexporter)
+![Docker Pulls](https://img.shields.io/docker/pulls/aleksandur24/stardewexporter) ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/aleksandur24/stardewexporter)
 
 
 ![Image of dashboard](/img/Stardew_dashboard.png "Dashboard preview")
