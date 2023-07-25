@@ -1,4 +1,5 @@
 # Stardew exporter
+![Docker Pulls](https://img.shields.io/docker/pulls/aleksandur24/stardewexporter)
 
 
 ![Image of dashboard](/img/Stardew_dashboard.png "Dashboard preview")
